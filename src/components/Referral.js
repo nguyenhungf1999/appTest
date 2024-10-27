@@ -77,7 +77,7 @@ const Referral = () => {
         <div className="max-w-[1180px] mx-auto">
           <div className="flex flex-col lg:flex-row items-center lg:gap-10 lg:items-start lg:justify-between space-y-4 lg:space-y-0 lg:space-x-12">
             {/* Baner Section */}
-            <div className="text-center lg:text-left space-y-3 lg:w-[45%] lg:pt-14 lg:py-10">
+            <div className="text-center lg:text-left space-y-3 lg:w-[45%] lg:pt-10 lg:py-10">
               <h1 className="text-[24px] md:text-3xl lg:text-4xl font-bold">
                 Unlock Rewards with the Copin Referral Program
               </h1>
@@ -91,35 +91,34 @@ const Referral = () => {
             </div>
 
             {/* Tiers */}
-            <div className="flex relative px-14 overflow-hidden pb-2 justify-center lg:justify-start items-end space-x-4  min-h-[250px] lg:min-h-[350px]">
+            <div className="flex relative px-14    overflow-hidden pb-2 justify-center  lg:justify-start items-end space-x-4  min-h-[220px] lg:min-h-[350px]">
               {tiers.map((tier) => (
-                <div key={tier.id} className="relative inline-block mx-auto">
+                <div key={tier.id} className="relative  mx-auto ">
                   <div
-                    className={`flex items-center justify-center rounded-full w-10 h-10 md:w-10 md:h-10 lg:w-12 lg:h-12 
+                    className={`flex items-center justify-center rounded-full w-10 h-10 md:w-12 md:h-12 
               transition-transform duration-200 ease-in-out transform 
               ${selectedTier === tier.id ? "scale-110 z-20" : "z-10"} `}
                     onClick={() =>
                       setSelectedTier(tier.id === selectedTier ? null : tier.id)
                     }
                   >
-                    <div className="flex flex-col items-center justify-center">
+                    <div className="flex flex-col items-center justify-center ">
                       <div className="relative">
                         {selectedTier === tier.id && (
-                          <div className="absolute top-0 transform -translate-x-1/2 -translate-y-full">
-                            <div
-                              className="w-5 h-20"
-                              style={{
-                                background:
-                                  "radial-gradient(circle, #ffffff, #3b82f6, #1e3a8a)",
-                              }}
-                            ></div>
+                          <div className="absolute top-10  transform -translate-x-1/2 -translate-y-full">
+                            <div className="w-32 lg:h-70 max-lg:h-50 ">
+                              <img
+                                className="w-32 lg:h-70 "
+                                src="/images/gradientcard.png"
+                              ></img>
+                            </div>
                           </div>
                         )}
                       </div>
 
                       <img
                         src={tier.image}
-                        className="cursor-pointer max-md:w-7"
+                        className="cursor-pointer max-md:w-7 w-8 h-8 z-30"
                       ></img>
                       <p className="cursor-pointer text-[13px] max-md:text-[12px] font-mono pt-1 w-full">
                         {tier.name}
@@ -139,9 +138,9 @@ const Referral = () => {
                             : "50%",
                         right: tier.id === 1 && "auto",
                       }}
-                      className="absolute border bottom-full left-1/2 bg-[#0E1328] transform -translate-x-1/2 -translate-y-4 md:w-[140px] max-md:w-[130px] font-normal text-[13px]  text-white rounded-lg shadow-lg z-30"
+                      className="absolute border border-gray-400 bottom-full left-1/2 bg-[#0E1328] bg-opacity-70 transform -translate-x-1/2 -translate-y-4 md:w-[140px] max-md:w-[130px] font-normal text-[13px]  text-white rounded-lg shadow-lg z-30"
                     >
-                      <div className="p-2 space-y-2">
+                      <div className="p-2 space-y-1">
                         {tier.info.map((info, idx) => (
                           <p
                             key={idx}

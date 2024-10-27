@@ -15,3 +15,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.light-effect {
+  width: 16px;
+  height: 140px;
+  background: linear-gradient(
+    to top,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.9) 20%,
+    rgba(255, 255, 255, 0.7) 40%,
+    rgba(255, 255, 255, 0.5) 60%,
+    #551ef5 80%,
+    rgba(83, 30, 244, 0) 100%
+  );
+  opacity: 0.9;
+  filter: blur(5px);
+}
